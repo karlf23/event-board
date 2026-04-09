@@ -9,6 +9,7 @@ What we are commiting to expose as a part of each feature
 - title (string)
 - description (string)
 - location (string)
+- category (string)
 - startDate (string ISO 8601)
 - endDate (string ISO 8601)
 - status ("draft" | "published")
@@ -41,6 +42,7 @@ src/events/
     title: string;
     description: string;
     location: string;
+    category: string;
     startDate: string;       // ISO 8601
     endDate: string;         // ISO 8601
     status: EventStatus;
@@ -56,6 +58,7 @@ src/events/
     id: string;
     title: string;
     location: string;
+    category: string;
     startDate: string;
     endDate: string;
     status: EventStatus;
@@ -63,6 +66,16 @@ src/events/
 ```
 
 ## Feature 2: Event Detail Page (Karl)
+
+### getEventById(eventId, user): Result<IEventRecord, EventError>
+```
+Input:
+eventId: string
+user: {id: string, role: UserRole}
+
+Output:
+Result<IEventRecord, EventError>
+```
 
 ## Feature 3: Event Editing (Jay)
 
@@ -72,6 +85,16 @@ src/events/
 
 ## Feature 6: Event Search (Than) 
 
-## Feature 7: Catagory and Date Filter (Karl)
+## Feature 7: Category and Date Filter (Karl)
 
+### listEvents(filters): Result<IEventRecord[], EventError>
+```
+Input:
+filters: {
+  category?: string;
+  timeframe?: "all" | "week" | "weekend";
+}
+Output:
+Result<IEventRecord[], EventError>
+```
 ## Feature 8: Save for Later (Jay)
