@@ -60,6 +60,16 @@ Returns all events by that organizer (may be empty). Errors: `UnexpectedEventErr
 
 ## Feature 2: Event Detail Page (Karl)
 
+### getEventById(eventId, user): Result<IEventRecord, EventError>
+```
+Input:
+eventId: string
+user: {id: string, role: UserRole}
+
+Output:
+Result<IEventRecord, EventError>
+```
+
 ## Feature 3: Event Editing (Jay)
 
 #### `IEventService.editEvent`
